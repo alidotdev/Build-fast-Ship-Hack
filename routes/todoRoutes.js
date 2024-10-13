@@ -3,9 +3,9 @@ const router = express.Router();
 const todoController = require('../controllers/todoController');
 const auth = require('../middleware/authMiddleware');
 
-router.get('/', auth, todoController.getTodos);
-router.post('/', auth, todoController.createTodo);
-router.put('/:id', auth, todoController.updateTodo);
-router.delete('/:id', auth, todoController.deleteTodo);
+router.get('/:id', todoController.getTodos);
+router.post('/:userId', todoController.createTodo);
+router.put('/:id', todoController.updateTodo);
+router.delete('/:id', todoController.deleteTodo);
 
 module.exports = router;

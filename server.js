@@ -2,13 +2,14 @@ const express = require("express");
 // const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const todoRoute = require("./routes/todoRoutes.js");
+const noteRoute = require("./routes/noteRoutes.js");
 // const userRoutes = require("./routes/user.js");
 // const { MongoClient } = require("mongodb");
 
 const app = express();
 
 // Middlewares
-// app.use(express.json());
+app.use(express.json());
 // app.use(bodyParser.json({ limit: "50mb", extended: true }));
 // app.use(bodyParser.urlencoded({ limit: "100mb", extended: true, parameterLimit: 50000 }))
 // app.use(cors());
@@ -21,6 +22,7 @@ const app = express();
 //     next();
 //   });
 app.use("/todo", todoRoute);
+app.use("/notes", noteRoute);
 // app.use("/user", userRoutes);
 
 
